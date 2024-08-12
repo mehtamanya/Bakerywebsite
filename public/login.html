@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakers Treat</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-image: url('italian-bakery-28379528.webp');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+
+        .container {
+            max-width: 500px;
+            margin: 50px auto;
+            margin-top: 30px;
+            background-color: #ffffff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(12, 12, 12, 0.1);
+        }
+
+        h1 {
+            font-size: 40px;
+            font-family: Lucida Handwriting;
+            text-align: center;
+            animation: colorChange 4s infinite;
+        }
+
+        @keyframes colorChange {
+            0%, 100% {
+                color: #b37400; /* Start and end color */
+            }
+            50% {
+                color: #fd0808; /* Middle color */
+            }
+        }
+
+        .form-group {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        input[type="text"],
+        input[type="email"],
+        input[type="password"] {
+            font-size: 20px;
+            width: 95%;
+            padding: 12px;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+        }
+
+
+
+/* logo a from class logo and anchor tag for a */
+
+body {
+    font-family: Arial, sans-serif;
+    background-image: url('italian-bakery-28379528.webp') ;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+}
+
+.container {
+    max-width: 500px;
+    margin: 50px auto;
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(12, 12, 12, 0.1);
+}
+
+h1 {
+    font-size: 40px;
+    font-family: Lucida Handwriting;
+    text-align: center;
+    animation: colorChange 4s infinite;
+}
+
+@keyframes colorChange {
+    0%, 100% {
+        color: #b37400; /* Start and end color */
+    }
+    50% {
+        color: #fd0808; /* Middle color */
+    }
+}
+
+.form-group {
+    margin-bottom: 15px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    font-size: 20px;
+    
+    width: 95%;
+    padding: 12px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+button {
+   
+    padding: 20px 55px;
+    background-color: #993706;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #b37400;
+}
+
+#message {
+    text-align: center;
+    margin-top: 15px;
+    color: red;
+}
+
+    header {
+        background-color: #564004;
+        padding: 10px 0;
+        font-family: Arial, sans-serif;
+    }
+    /* class menu bar */
+    .menu-bar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        max-width: 1200px;
+     
+        margin: 0 auto;
+        padding: 0 20px;
+    }
+    /* logo a from class logo and anchor tag for a */
+    .logo a {
+        font-size: 24px;
+        font-weight: bold;
+        text-decoration: none;
+        color: #ffffff;
+    }
+    /* menu list   */
+    .menu-list {
+        list-style-type: none;
+        padding: 0;
+        display: flex;
+        gap: 20px;
+    }
+    
+    .menu-list li {
+        margin: 0;
+    }
+    
+    .menu-list li a {
+        text-decoration: none;
+        color: #ffffff;
+        padding: 10px 15px;
+        border-radius: 5px;
+        transition: background-color 0.3s ease;
+    }
+    
+    .menu-list li a:hover {
+        background-color: #333;
+        color: #fff;
+    }
+    
+    .menu-list li a.active {
+        background-color: #333;
+        color: #fff;
+    }
+    /*  navbar styling full menu list */
+
+
+
+        button {
+            padding: 20px 55px;
+            background-color: #993706;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #b37400;
+        }
+
+        #loginMessage {
+            text-align: center;
+            margin-top: 15px;
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu-bar">
+            <div class="logo">
+                <a href="index.html">The Bakers Treat</a>
+            </div>
+            <ul class="menu-list">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="aboutus.html">About Us</a></li>
+                <!-- <li><a href="menu.html">Menu</a></li> -->
+                <li><a href="index.html">Sign Up</a></li>
+                <li><a href="contactus.html">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header> <br> <Br>
+    <div class="container">
+        <h1>Login</h1>
+        
+        <form id="loginForm">            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <div class="form-group">
+                <button type="submit">Login</button>
+              <a href="index.html">  <p>Not an existing user? Click on SignUp</p></a>
+            </div>
+
+        </form>
+
+        <p id="loginMessage"></p>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

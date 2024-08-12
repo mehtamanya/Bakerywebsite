@@ -1,0 +1,20 @@
+{
+  "dependencies": {
+    "bcrypt": "^5.1.1",
+    "body-parser": "^1.20.2",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "mongoose": "^8.3.0",
+    "nodemailer": "^6.9.13"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "name": "signup-project",
+  "version": "1.0.0",
+  "main": "server.js",
+  "author": "manya",
+  "license": "ISC",
+  "keywords": [],
+  "description": ""
+}

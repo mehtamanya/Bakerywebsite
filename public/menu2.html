@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakers Treat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #564004;
+            padding: 10px 0;
+        }
+        
+
+        .menu-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .logo a {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            color: #ffffff;
+        }
+
+        .menu-list {
+            list-style-type: none;
+            padding: 0;
+            display: flex;
+            gap: 20px;
+        }
+
+        .menu-list li {
+            margin: 0;
+        }
+
+        .menu-list li a {
+            text-decoration: none;
+            color: #ffffff;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-list li a:hover {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .menu-list li a.active {
+            background-color: #333;
+            color: #fff;
+        }
+
+        .menu-section {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        .menu-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            justify-content: space-between;
+        }
+
+        .menu-item {
+            flex: 0 0 calc(25% - 20px);
+            border: 1px solid #e0e0e0;
+            border-radius: 5px;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .menu-item img {
+            max-width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 5px;
+        }
+
+        .menu-item h2 {
+            font-size: 24px;
+            margin-top: 20px;
+        }
+
+        .menu-item p {
+            margin-top: 10px;
+            font-size: 16px;
+        }
+
+        .menu-item .price {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #a31818bc;
+        }
+
+        .menu-item .quantity {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .menu-item .quantity button {
+            background-color: #a31818bc;
+            color: white;
+            border: none;
+            padding: 5px 10px;
+            border-radius: 50%;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+
+        .menu-item .quantity input {
+            width: 50px;
+            text-align: center;
+        }
+
+        .menu-item button {
+            background-color: #a31818bc;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .menu-item button:hover {
+            background-color: #8c1414;
+        }
+
+        h1 {
+            font-size: 50px;
+            font-family: Lucida Handwriting;
+            text-align: center;
+            animation: colorChange 4s infinite;
+        }
+
+        @keyframes colorChange {
+            0%, 100% {
+                color: #b37400;
+            }
+
+            50% {
+                color: #fd0808;
+            }
+        }
+        .active{
+            color:#fd0808;
+        }
+
+        .search-container {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .search-container input[type=text] {
+            padding: 10px;
+            margin: 10px 0;
+            width: 50%;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .search-container button {
+            padding: 10px 20px;
+            background-color: #a31818bc;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .search-container button:hover {
+            background-color: #8c1414;
+        }
+        
+    </style>
+</head>
+
+<body>
+    <header>
+        <nav class="menu-bar">
+            <div class="logo">
+                <a href="index.html">The Bakers Treat</a>
+            </div>
+
+            <ul class="menu-list">
+                <li><a href="home.html" id="home">Home</a></li>
+                <li><a href="aboutus.html" id="aboutus">About Us</a></li>
+                <li><a href="menu2.html" id="menu">Menu</a></li>
+                <li><a href="login.html" id="login">Login</a></li>
+                <li><a href="contactus.html" id="contactus">Contact Us</a></li>
+                <!-- <li><a href="cart.html"><i class="fas fa-shopping-cart"></i> Cart</a></li> -->
+            </ul>
+        
+        </nav>
+    </header>
+
+    <section class="menu-section">
+        <div class="search-container">
+            <select id="categoryFilter">
+                <option value="all">All Categories</option>
+                <option value="cookies">Cookies</option>
+                <option value="bread">Bread</option>
+                <option value="creamRoll">Cream-Roll</option>
+                <option value="jamRoll">Jam-Roll</option>
+                <option value="rusk">Rusk</option>
+                <option value="pastries">Pastries</option>
+                <!-- <option value="red velvet">Red-Velvet Cake</option> -->
+                <option value="cake">Cake</option>
+        
+              
+            </select>
+            <input type="text" id="searchInput" placeholder="Search for items...">
+
+            <button onclick="searchMenu()">Search</button>
+        </div>
+        <h1>Our Menu</h1>
+        <h2  style="text-align: center; color: green;">Please Login to Buy Any Product</h2>
+        
+        <div class="menu-container">
+            <div class="menu-item">
+                <img src="cookies2.jpeg" alt="Cookies">
+                <h2>Cookies</h2>
+                <p>Delicious Cookies for all occasions.</p>
+                <p class="price">₹5.00</p>
+             
+            </div>
+            <div class="menu-item">
+                <img src="breads.webp" alt="Bread">
+                <h2>Bread</h2>
+                <p>Freshly baked breads, including sourdough, baguettes, and more..</p>
+                <p class="price">₹7.00</p>
+             </div>
+            <div class="menu-item">
+                <img src="creamm roll.jpeg" alt="Cream-Roll">
+                <h2>Cream-Roll</h2>
+                <p>Delicious Cream Roll.</p>
+                <p class="price">₹4.00</p>
+            
+            </div>
+            <div class="menu-item">
+                <img src="donuts2.jpg" alt="Donuts">
+                <h2>Donuts</h2>
+                <p>Delicious and beautifully decorated Donuts for all occasions.</p>
+                <p class="price">₹3.50</p>
+                </div>
+            <div class="menu-item">
+                <img src="jamroll.jpg" alt="Jam-Roll">
+                <h2>Jam-Roll</h2>
+                <p>Delicious and beautifully decorated JamRoll for all occasions.</p>
+                <p class="price">₹4.50</p>
+              </div>
+            <div class="menu-item">
+                <img src="cupcakes.webp" alt="Cup-Cakes">
+                <h2>Cup-Cakes</h2>
+                <p>Delicious and beautifully decorated Cupcakes for all occasions.</p>
+                <p class="price">₹2.50</p>
+              </div>
+            <div class="menu-item">
+                <img src="cookies.jpg" alt="Cookies">
+                <h2>Cookies</h2>
+                <p>Chocolate cookies for all occasions.</p>
+                <p class="price">₹5.00</p>
+              </div>
+            <div class="menu-item">
+                <img src="red cake.webp" alt="Red Velvet">
+                <h2>Red Velvet</h2>
+                <p>Delicious and beautifully decorated Red Velvet for all occasions.</p>
+                <p class="price">₹8.00</p>
+              </div>
+            <div class="menu-item">
+                <img src="cupcakes2.webp" alt="Cup-Cakes">
+                <h2>Cup-Cakes</h2>
+                <p>Delicious and beautifully decorated cup cakes for all occasions.</p>
+                <p class="price">₹2.50</p>
+              </div>
+            <div class="menu-item">
+                <img src="cake.jpg" alt="Cakes">
+                <h2>Cakes</h2>
+                <p>Delicious and beautifully decorated cakes for all occasions.</p>
+                <p class="price">₹10.00</p>
+               </div>
+            <div class="menu-item">
+                <img src="pastrie.jpg" alt="Pastries">
+                <h2>Pastries</h2>
+                <p>Flaky, buttery pastries filled with sweet or savory fillings.</p>
+                <p class="price">₹6.00</p>
+               </div>
+            <div class="menu-item">
+                <img src="rusk.jpg" alt="Rusk">
+                <h2>Rusk</h2>
+                <p>Delicious Rusk.</p>
+                <p class="price">₹3.00</p>
+               </div>
+        </div>
+    </section>
+
+    <script>
+        function addToCart(name, price, quantity, image) {
+            if (parseInt(quantity) === 0) {
+                alert('Please select a quantity.');
+                return;
+            }
+
+            let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+            let found = false;
+            cart.forEach(item => {
+                if (item.name === name) {
+                    item.quantity = parseInt(item.quantity) + parseInt(quantity);
+                    item.total = parseFloat(item.price) * parseInt(item.quantity);
+                    found = true;
+                }
+            });
+
+            if (!found) {
+                cart.push({
+                    name: name,
+                    price: price,
+                    quantity: quantity,
+                    total: price * quantity,
+                    image: image
+                });
+            }
+
+            localStorage.setItem('cart', JSON.stringify(cart));
+            alert('Item added to cart!');
+            window.location.href = 'cart.html';
+        }
+
+        function increaseQuantity(inputId) {
+            let input = document.getElementById(inputId);
+            let value = parseInt(input.value);
+            input.value = value + 1;
+        }
+
+        function decreaseQuantity(inputId) {
+            let input = document.getElementById(inputId);
+            let value = parseInt(input.value);
+            if (value > 0) {
+                input.value = value - 1;
+            }
+        }
+
+        function searchMenu() {
+    let input = document.getElementById('searchInput');
+    let filter = input.value.toLowerCase();
+    let categoryFilter = document.getElementById('categoryFilter').value;
+    let menuItems = document.querySelectorAll('.menu-item');
+
+    menuItems.forEach(item => {
+        let title = item.querySelector('h2').innerText.toLowerCase();
+        let altText = item.querySelector('img').alt.toLowerCase();
+        
+        // Mapping alt text to correct category
+        let categoryMap = {
+            'cookies': ['cookies', 'choco cookies'],
+            'bread': ['bread'],
+            'creamRoll': ['cream-roll'],
+            'jamRoll': ['jam-roll'],
+            'rusk': ['rusk'],
+            'pastries': ['pastries'],
+            // 'red velvet': ['red velvet'],
+            'cake': ['cakes', 'cup-cakes', 'red velvet']
+        };
+        
+        let isMatch = (title.includes(filter) || filter === '');
+        let isCategoryMatch = (categoryFilter === 'all') || categoryMap[categoryFilter].includes(altText);
+        
+        if (isMatch && isCategoryMatch) {
+            item.style.display = '';
+        } else {
+            item.style.display = 'none';
+        }
+    });
+}
+
+
+        // navbar highlighted current page open    
+        let currentLocation = window.location.href;
+
+        if (currentLocation.includes("home.html")) {
+            document.getElementById("home").classList.add("active");
+        } else if (currentLocation.includes("aboutus.html")) {
+            document.getElementById("aboutus").classList.add("active");
+        } else if (currentLocation.includes("menu2.html")) {
+            document.getElementById("menu").classList.add("active");
+        } else if (currentLocation.includes("index.html")) {
+            document.getElementById("login").classList.add("active");
+        } else if (currentLocation.includes("contactus.html")) {
+            document.getElementById("contactus").classList.add("active");
+        }
+    </script>
+</body>
+
+</html>
+
+
+

@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Confirmation - Bakery Name</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #fffefe;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-image: url(cupcakes.webp);
+            background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+       
+        padding: 0;
+        }
+
+        .confirmation-container {
+            background-color: #ffffff;
+            padding: 50px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            margin: 200px;
+        }
+
+        h1 {
+            font-family: 'Lucida Handwriting', sans-serif;
+            font-size: 36px;
+            color: #a31818;
+            padding-top: 10px;;
+            border-bottom: 2px solid #a31818;
+            padding-bottom: 30px;
+            animation: colorChange 4s infinite;
+        }
+
+        @keyframes colorChange {
+            0%, 100% {
+                color: #b37400;
+            }
+
+            50% {
+                color: #fd0808;
+            }
+        }
+
+        p {
+            font-size: 20px;
+            margin-bottom: 20px;
+            color: #333;
+        }
+
+        a {
+            text-decoration: none;
+            background-color: #a31818;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        a:hover {
+            background-color: #8c1414;
+        }
+
+      
+    </style>
+</head>
+
+<body>
+  
+     
+    <div class="confirmation-container">
+        <h1>Order Confirmation</h1>
+        <p>Your order has been confirmed. It will be delivered to the entered address.</p>
+        <a href="menu.html">Go Back to Menu</a>
+    </div>
+</body>
+
+</html>

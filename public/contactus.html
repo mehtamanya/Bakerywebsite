@@ -1,0 +1,236 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakers Treat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(cookies.jpg);
+            background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+        }
+        
+
+        .location {
+            display: flex;
+            justify-content: space-between;
+            background-color: ghostwhite;
+            margin: 2% auto;
+            margin-bottom: 20px;
+            max-width: 1200px;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-info {
+            width: 50%;
+            padding: 50px;
+            box-sizing: border-box;
+        }
+
+        .location-info img {
+            width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .location-1 {
+            font-size: 36px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+        }
+
+        .location-2 {
+            font-size: 18px;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .map-map {
+            list-style: none;
+            padding: 0;
+        }
+
+        .map-map li {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+
+        .map-map i {
+            font-size: 24px;
+            margin-right: 15px;
+            color: #0e2134;
+        }
+
+        .map-map p {
+            font-size: 18px;
+            color: #080505;
+        }
+        .home {
+
+align-items: center;
+text-align: center;
+font-family: "Alegreya Sans";
+
+margin: auto;
+margin-top: 3px;
+margin-bottom: 5px
+
+}
+
+
+        
+.home button {
+background-color: tan;
+border-radius: 5px;
+font-size: 12px;
+size: 40px;
+padding: 15px 32px;
+color:rgb(255, 255, 255);
+border-color: transparent;
+}
+        #trancparent-button {
+background-color: transparent;
+border-color: white;
+color: black;
+margin-left: 1.5%;
+}
+#trancparent-button:hover{
+background-color: rgb(90, 65, 7);
+}
+
+
+header {
+    background-color: #564004;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+}
+/* class menu bar */
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+ 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* logo a from class logo and anchor tag for a */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+/* menu list   */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-list li {
+    margin: 0;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-list li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.menu-list li a.active {
+    background-color: #333;
+    color: #fff;
+}
+/*  navbar styling full menu list */
+
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="menu-bar">
+            <div class="logo">
+                <a href="index.html">The Bakers Treat</a>
+            </div>
+            <ul class="menu-list">
+                <li><a href="home.html" id="home">Home</a></li>
+                <li><a href="aboutus.html" id="aboutus">About Us</a></li>
+                <!-- <li><a href="menu.html" id="menu">Menu</a></li> -->
+                <li><a href="login.html" id="login">Login</a></li>
+                <li><a href="contactus.html" id="contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <div class="location">
+        <div class="location-info">
+            <h1 class="location-1">Contact Information</h1>
+            <p class="location-2">I am a XYZ. I have create this Bakery website. Bakery Management System is totally computer based software application to maintain day to day transactions in a bakery. This software helps to store all bakery items with category and sub-category. It also maintains record of purchase and sales. It maintains details of 
+                Supplier. This application generates reports of purchase, sales and stock. The system reflects standard structure so that any inventory management system can implements this system easily in their existing system. The system works to reduce the human efforts. Due to totally computerized occurrence of error is less & works smoothly. It is user friendly system.  </p>
+            <p class="location-2">Our contact details:</p>
+            <ul class="map-map">
+                <li>
+                    <i class="fas fa-map-marker-alt"></i>
+                    <p> XYZ College</p>
+                </li>
+                <li>
+                    <i class="fas fa-phone-alt"></i>
+                    <p>9876245619</p>
+                </li>
+                <li>
+                    <i class="fas fa-mobile-alt"></i>
+                    <p>+01-12345672</p>
+                </li>
+                <li>
+                    <i class="fas fa-envelope"></i>
+                    <p>xyz@gmail.com</p>
+                </li>
+            </ul>
+        </div>
+        <div class="location-info">
+            <img src="cookies.jpg" alt="Cookies Image">
+        </div>
+    </div>
+<div class="home">
+    <a href="home.html">
+    <button type="button" id="trancparent-button"> GO TO HOME   </button> </a></div>
+
+
+    <script>
+          // Get the current page URL
+    let currentLocation = window.location.href;
+
+// Check the current page URL and set the active class to the corresponding navbar item
+if (currentLocation.includes("home.html")) {
+    document.getElementById("home").classList.add("active");
+} else if (currentLocation.includes("aboutus.html")) {
+    document.getElementById("aboutus").classList.add("active");
+// } else if (currentLocation.includes("menu.html")) {
+//     document.getElementById("menu").classList.add("active");
+} else if (currentLocation.includes("login.html")) {
+    document.getElementById("login").classList.add("active");
+} else if (currentLocation.includes("contactus.html")) {
+    document.getElementById("contactus").classList.add("active");
+}
+    </script>
+</body>
+</html>

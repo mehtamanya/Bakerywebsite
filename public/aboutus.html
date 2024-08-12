@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakers Treat</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+          body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 0;
+            padding: 0;
+            background-image: url(cupcakes.webp);
+            background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            font-family: Lucida Handwriting;
+            text-align: center;
+            font-size: 60px;
+            color: #333;
+            margin-bottom: 20px;
+            border-bottom: 2px solid #333;
+            padding-bottom: 10px;
+            animation: colorChange 4s infinite;
+        }
+        @keyframes colorChange {
+    0%, 100% {
+        color: #b37400; /* Start and end color */
+    }
+    50% {
+        color: #fd0808; /* Middle color */
+    }
+}
+
+        p {
+            font-size: 20px;
+            line-height: 1.6;
+            color: #000000;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #ff0000;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        .btn:hover {
+            background-color: #b36200;
+        }
+        
+header {
+    background-color: #564004;
+    padding: 10px 0;
+    font-family: Arial, sans-serif;
+}
+/* class menu bar */
+.menu-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+ 
+    margin: 0 auto;
+    padding: 0 20px;
+}
+/* logo a from class logo and anchor tag for a */
+.logo a {
+    font-size: 24px;
+    font-weight: bold;
+    text-decoration: none;
+    color: #ffffff;
+}
+/* menu list   */
+.menu-list {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+}
+
+.menu-list li {
+    margin: 0;
+}
+
+.menu-list li a {
+    text-decoration: none;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.menu-list li a:hover {
+    background-color: #333;
+    color: #fff;
+}
+
+.menu-list li a.active {
+    background-color: #333;
+    color: #fff;
+}
+/*  navbar styling full menu list */
+
+    </style>
+</head>
+
+<body>
+    <!-- navbar -->
+    <header>
+
+        <nav class="menu-bar">
+            <div class="logo">
+                <a href="index.html">The Bakers Treat</a>
+            </div>
+            <ul class="menu-list">
+                <li><a href="home.html" id="home">Home</a></li>
+                <li><a href="aboutus.html" id="aboutus">About Us</a></li>
+                <!-- <li><a href="menu.html" id="menu">Menu</a></li> -->
+                <li><a href="index.html" id="login">Login</a></li>
+                <li><a href="contactus.html" id="contactus">Contact Us</a></li>
+            </ul>
+        </nav>
+    </header> 
+    <!-- navbar finish -->
+
+
+    <!-- container in which our all about us is there -->
+    <div class="container">
+        <h1>About Us</h1>
+        <p>Welcome to <strong>The Bakers Treat</strong>, where baking is not just our business, but our passion.  we are a family-owned bakery nestled in the heart of <strong>JALANDHAR</strong>.
+             With years of experience and a commitment to quality, we take pride in serving our community with freshly baked goods made from the finest ingredients.</p>
+        
+        <p>Our journey began with a simple vision: to create delectable treats that bring joy to people's lives. From mouth-watering pastries to artisanal bread and custom-designed cakes,
+             each item in our bakery is crafted with love and attention to detail. Our talented bakers combine traditional techniques with innovative flavors to ensure every bite is a delightful experience.</p>
+        
+        <p>At <strong>The Bakers Treat</strong>, we believe in the power of good food to create memorable moments. Whether you're stopping by for your morning coffee and pastry, picking up a special cake for a celebration, or ordering a custom dessert for a special occasion, we are dedicated to providing you with exceptional service and products that exceed your expectations.</p>
+        
+        <p>Thank you for choosing <strong>The Bakers Treat</strong>. We look forward to welcoming you and sharing our passion for baking with you and your loved ones.</p>
+      <!-- end of container -->
+      
+      
+        <!-- button  -->
+        <a href="contactus.html" class="btn">Contact Us</a>
+        <!-- button end -->
+    </div>
+    <script>
+          // Get the current page URL
+    let currentLocation = window.location.href;
+
+// Check the current page URL and set the active class to the corresponding navbar item
+if (currentLocation.includes("home.html")) {
+    document.getElementById("home").classList.add("active");
+} else if (currentLocation.includes("aboutus.html")) {
+    document.getElementById("aboutus").classList.add("active");
+// } else if (currentLocation.includes("menu.html")) {
+//     document.getElementById("menu").classList.add("active");
+} else if (currentLocation.includes("index.html")) {
+    document.getElementById("login").classList.add("active");
+}
+    else if (currentLocation.includes("contactus.html")) {
+      document.getElementById("contactus").classList.add("active");
+}
+    </script>
+</body>
+
+</html>

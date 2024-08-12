@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Bakers Treat</title>
+</head>
+
+<style>
+    /* webpage body */
+    body {
+        font-family: Arial, sans-serif;
+        background-image: url(cookies.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        margin: 0;
+        padding: 0;
+    }
+
+    /* container of cart styling */
+    .cart-container {
+        max-width: 1200px;
+        margin: 70px auto;
+        padding: 20px;
+        background-color: #fff;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+    }
+
+    /* item of cart container styling */
+    .cart-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 10px;
+        border-bottom: 1px solid #e0e0e0;
+        padding-bottom: 10px;
+    }
+
+    /* h1 styling */
+    h1 {
+        font-family: Lucida Handwriting;
+        text-align: center;
+        font-size: 60px;
+        color: #333;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #333;
+        padding-bottom: 10px;
+        animation: colorChange 4s infinite;
+    }
+
+    /* this is for animation */
+    @keyframes colorChange {
+        0%, 100% {
+            color: #b37400; /* Start and end color */
+        }
+        50% {
+            color: #fd0808; /* Middle color */
+        }
+    }
+
+    /* total text styling */
+    .total {
+        font-size: 20px;
+        margin-top: 20px;
+        text-align: right;
+    }
+
+    /* button */
+    button {
+        background-color: #a31818bc;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+        background-color: #8c1414;
+    }
+</style>
+
+<body>
+    <!-- container -->
+    <div class="cart-container">
+        <h1>Your Cart</h1>
+
+        <div id="cart-items">
+            <!-- Cart items will be displayed here -->
+        </div>
+
+        <b><div class="total" id="total-price"></div></b>
+
+        <!-- Proceed to Checkout -->
+        <button onclick="backToMenu()">Back to Menu</button>
+        <button onclick="checkout()">Proceed to Checkout</button>
+
+    </div>
+
+    <script>
+        // javascript code here 
+        let cart = JSON.parse(localStorage.getItem('cart')) || [];
+
+        // cart items come from id of div same with total
+        const cartItemsDiv = document.getElementById('cart-items');
+        const totalPriceDiv = document.getElementById('total-price');
+
+        let totalPrice = 0;
+
+        cart.forEach(item => {
+            const cartItem = document.createElement('div');
+            cartItem.className = 'cart-item';
+
+            cartItem.innerHTML = `
+                <span>${item.name} - ₹${item.price.toFixed(2)} - Quantity: ${item.quantity} - Total: ₹${item.total.toFixed(2)}</span>
+                <button onclick="removeItem('${item.name}', ${item.price}, ${item.quantity})">Remove</button>
+            `;
+
+            cartItemsDiv.appendChild(cartItem);
+
+            totalPrice += item.total;
+        });
+
+        totalPriceDiv.textContent = `Total: ₹${totalPrice.toFixed(2)}`;
+
+        // remove item code
+        function removeItem(itemName, price, quantity) {
+            cart = cart.filter(item => item.name !== itemName);
+            localStorage.setItem('cart', JSON.stringify(cart));
+
+            cartItemsDiv.innerHTML = '';
+            totalPrice = 0;
+
+            cart.forEach(item => {
+                const cartItem = document.createElement('div');
+                cartItem.className = 'cart-item';
+
+                // inner html return item name, item price, quantity of item, total item prize
+                cartItem.innerHTML = `
+                    <span>${item.name} - ₹${item.price.toFixed(2)} - Quantity: ${item.quantity} - Total: ₹${item.total.toFixed(2)}</span>
+                    <button onclick="removeItem('${item.name}', ${item.price}, ${item.quantity})">Remove</button>
+                `;
+
+                // total prize of all item
+                cartItemsDiv.appendChild(cartItem);
+
+                totalPrice += item.total;
+            });
+
+            totalPriceDiv.textContent = `Total: ₹${totalPrice.toFixed(2)}`;
+        }
+
+        // alert and after it go on next page
+        function checkout() {
+            if (cart.length === 0) {
+                alert('Your cart is empty!');
+
+                // if your cart is empty it will go to menu.html 
+                window.location.href = 'menu.html';
+
+                return;
+            }
+            // if no then go to checkout.html
+            window.location.href = 'checkout.html';
+        }
+
+        function backToMenu() {
+            window.location.href = 'menu.html';
+        }
+
+        // Retrieve cart items from local storage
+        let cartItems = JSON.parse(localStorage.getItem('cartItems')) || [];
+
+        // Display cart items
+        function clearCart() {
+            localStorage.removeItem('cartItems');
+        }
+    </script>
+</body>
+
+</html>
